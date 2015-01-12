@@ -1,2 +1,2 @@
 # kata-tdd-1-THANHNGUYEN
-TDD Kata 1 by Thanh Nguyen
+kata http://osherove.com/tdd-kata-1
