@@ -19,7 +19,7 @@ QUnit.test('Test with comma', function( assert ) {
 });
 
 QUnit.test('Test with comma and line break', function( assert ) {
-	assert.equal(Add('1\r\n2,3'), 6);
+	assert.equal(Add('1\n2,3'), 6);
 });
 
 QUnit.test('Test with negative numbers', function( assert ) {
@@ -27,29 +27,29 @@ QUnit.test('Test with negative numbers', function( assert ) {
 });
 
 QUnit.test('Test with new delimiter (;)', function( assert ) {
-	assert.equal(Add('//;\r\n1;2;3'), 6);
+	assert.equal(Add('//;\n1;2;3'), 6);
 });
 
 QUnit.test('Combine delimiters (,) (;) (new line)', function( assert ) {
-	assert.equal(Add('//;\r\n1;2,3\r\n4'), 10);
+	assert.equal(Add('//;\n1;2,3\n4'), 10);
 });
 
 QUnit.test('Test with 1 new delimiter in bracket ([;]), combine (,), and (new line)', function( assert ) {
-	assert.equal(Add('//[;]\r\n1;2,3\r\n4'), 10);
+	assert.equal(Add('//[;]\n1;2,3\n4'), 10);
 });
 
 QUnit.test('Test with multiple delimiter in bracket ([;][***]), combine (,), and (new line)', function( assert ) {
-	assert.equal(Add('//[;][***]\r\n1;2,3\r\n4***5'), 15);
+	assert.equal(Add('//[;][***]\n1;2,3\n4***5'), 15);
 });
 
 QUnit.test('Test with multiple delimiter in bracket ([;][***][=====]), combine (,), and (new line)', function( assert ) {
-	assert.equal(Add('//[;][***]\r\n1;2,3\r\n4***5=====5'), 20);
+	assert.equal(Add('//[;][***]\n1;2,3\n4***5=====5'), 20);
 });
 
 QUnit.test('Test with multiple delimiter in bracket ([;][***][::]), combine (,), and (new line)', function( assert ) {
-	assert.equal(Add('//[;][***]\r\n1;2,3\r\n4***5::5'), 20);
+	assert.equal(Add('//[;][***]\n1;2,3\n4***5::5'), 20);
 });
 
 QUnit.test('Test with multiple delimiter in bracket ([;][***][o--}==>]), combine (,), and (new line)', function( assert ) {
-	assert.equal(Add('//[;][***]\r\n1;2,3\r\n4***5o--}==>5'), 20);
+	assert.equal(Add('//[;][***]\n1;2,3\n4***5o--}==>5'), 20);
 });

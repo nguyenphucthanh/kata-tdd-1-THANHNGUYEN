@@ -4,11 +4,43 @@
   <meta charset="utf-8">
   <title>TDD Kata 1</title>
   <link rel="stylesheet" href="assets/style/normalize.css">
+  <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-  <div id="qunit"></div>
-  <div id="qunit-fixture"></div>
+	<form id="form-calculate" class="form-calculate">
+		<h3>Calculate sum of numbers</h3>
+	  <textarea id="input-numbers"></textarea>
+	  <button id="btn-submit" type="submit">Calculate</button>
+	  <div class="result-area">
+		  <strong>Result = </strong>
+		  <code id="result">
+		  </code>
+	  </div>
+  	<ul>
+  		<li>
+  			<a target="_blank" href="test/index.html">Unit test</a>
+			</li>
+			<li>
+				<a target="_blank" href="http://osherove.com/tdd-kata-1">Kata #1</a>
+			</li>
+		</ul>
+	</form>
   <script src="assets/scripts/libs/jquery-2.1.3.min.js"></script>
   <script src="assets/scripts/app.js"></script>
+  <script>
+  	$(function() {
+  		$('#form-calculate').submit(function(e) {
+  			e.preventDefault();
+  			try {
+	  			var numbers = $(this).find('#input-numbers').val();
+	  			var result = Add(numbers);
+	  			$(this).find('#result').text(result);
+	  		}
+	  		catch(ex) {
+	  			$(this).find('#result').text(ex);
+	  		}
+  		});
+  	});
+  </script>
 </body>
 </html>

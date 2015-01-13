@@ -28,7 +28,7 @@ function RegExpBuilder(arr) {
 function Add(numbers) {
 	try {
 		var defaultDelimiter = [
-			'\r?\n',
+			'\n',
 			','
 		];
 		if(typeof(numbers) === 'undefined' || numbers === null || numbers === '') {
@@ -42,8 +42,8 @@ function Add(numbers) {
 
 			//check for overriding delimiter
 			if(numbers.indexOf('//') === 0) {
-				var newDelimiter = numbers.substring(0, numbers.indexOf('\r'));
-				numbers = numbers.replace(newDelimiter + '\r\n', '');
+				var newDelimiter = numbers.substring(0, numbers.indexOf('\n'));
+				numbers = numbers.replace(newDelimiter + '\n', '');
 				//handle single delimiter (with or without bracket), multiple delimiters
 				newDelimiter = newDelimiter.replace('//', '').replace('[', '').replace(/]$/, '').split(/\]\[/);
 				defaultDelimiter = defaultDelimiter.concat(newDelimiter);
