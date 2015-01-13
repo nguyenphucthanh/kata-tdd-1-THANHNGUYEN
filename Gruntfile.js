@@ -6,7 +6,10 @@ module.exports = function(grunt) {
     jshint: {
       all: ['app/**/*.js'],
       options: {
-        ignores: ['app/test/**/*.js']
+        ignores: [
+          'app/test/**/*.js',
+          'app/assets/scripts/libs/**/*.js'
+        ]
       }
     },
     connect: {
